@@ -2,10 +2,10 @@ import React from 'react';
 import './App.css';
 
 
-function Home(){
+function Brands(){
     return(
 
-        <h1>"Home"</h1>
+        <h1>"Brands"</h1>
 
     );
 
@@ -13,4 +13,4 @@ function Home(){
 }
 
 
-export default Home; 
+export default Brands; 
