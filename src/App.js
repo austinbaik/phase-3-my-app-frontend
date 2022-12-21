@@ -1,5 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
+import Home from './Home'
+import Brands from '/Brands.js'
 
 function App() {
   return (
