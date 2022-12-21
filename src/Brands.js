@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import './App.css';
+import 'Brandlist.js';
 
 
 function Brands() {
@@ -16,26 +17,31 @@ function Brands() {
 
 
     return(
-    <div>
-        <h1>"Brands"</h1>
-
-        // // populate the Brands + Logo
-
-        // 
-
-
-            <img class="img"
-                src=""
-                alt=""
-            />  
-
-        // Form to add Brand 
-        //form details: 
-            //Name 
-            //Url to Brand logo 
+        <div>
+            <h1>"Brands"</h1>
             
+            
+            //populate the Brands + Logo
+            <div>
+                {brands.map((brand) => {
+
+                    return( 
+                    
+                    <BrandList brandObj={brand} />
+
+                    )
+                })}
+
+            </div>
+
+
+            // Form to add Brand 
+            //form details: 
+                //Name 
+                //Url to Brand logo 
+                
         </div>
-        
+
     );
 
 
