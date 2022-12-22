@@ -11,6 +11,32 @@ function NewBrand({}) {
     const [url, setUrl] = useState("")
 
 
+    const handleSubmit = (e) => {
+        e.preventDefault()
+        fetch("http://localhost:9292/", {
+
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                name: name,
+                url: url
+            }),
+        })
+            .then(response => response.json())
+            .then(data => {
+
+                //need to send the return object up to App to update State 
+                console.log('Success:', data);
+                setName("")
+                setUrl("")
+            })
+
+    }
+
+
+
 
 
     function handleNameChange(e) {
@@ -21,10 +47,11 @@ function NewBrand({}) {
     }
 
 
+
+
+
     return(
     <div>
-
-       
 
         <form onSubmit={handleSubmit}>
             <label>
@@ -36,15 +63,9 @@ function NewBrand({}) {
             <button type="submit">Submit</button>
         </form>
 
-
-
-
-
-
     </div>
         
     );
-
 
 }
 
