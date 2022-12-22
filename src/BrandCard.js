@@ -8,7 +8,7 @@ function BrandCard({brand}) {
 
     return(
     <div>
-
+ 
         // // populate the Brands + Logo
         
         <h2>{brand.name}</h2>

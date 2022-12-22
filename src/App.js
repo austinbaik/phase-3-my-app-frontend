@@ -13,20 +13,21 @@ import {
 
 
 export default function App() {
+
+
+  
   return (
     <Router>
       <div>
-        <Nav/>
-        <ClickMe/>
         {/* A <Switch> looks through its children <Route>s and
             renders the first one that matches the current URL. */}
         <Switch>
-          <Route path="/images">
-            <Images />
+          <Route path="/Brands">
+            <Brands />
           </Route>
-          <Route path="/favorites">
+          {/* <Route path="/brand[:id]">
             <Favorites />
-          </Route>
+          </Route> */}
           <Route path="/">
             <Home />
           </Route>
