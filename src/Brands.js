@@ -17,8 +17,7 @@ function Brands({ brandsArr }) {
 
     return (
         <div>
-            <h1>"Brands"</h1>
-
+            <h1>Brands</h1>
 
             {/* //populate the Brands + Logo */}
             <div>
@@ -33,7 +32,7 @@ function Brands({ brandsArr }) {
                 </ul>
             </div>
 
-            {/* <NewBrand newBrand={newBrand}/> */}
+            <NewBrand/>
             {/* // Form to add Brand 
             //form details: 
                 //Name 

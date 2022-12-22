@@ -10,10 +10,9 @@ function NewBrand({}) {
     const [name, setName] = useState("")
     const [url, setUrl] = useState("")
 
-
     const handleSubmit = (e) => {
         e.preventDefault()
-        fetch("http://localhost:9292/", {
+        fetch("http://localhost:9292/brands", {
 
             method: 'POST',
             headers: {
@@ -37,8 +36,6 @@ function NewBrand({}) {
 
 
 
-
-
     function handleNameChange(e) {
         setName(e.target.value)
     }
@@ -47,11 +44,10 @@ function NewBrand({}) {
     }
 
 
-
-
-
     return(
     <div>
+
+        <h2> Submit New Brand </h2>
 
         <form onSubmit={handleSubmit}>
             <label>
