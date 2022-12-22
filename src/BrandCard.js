@@ -13,6 +13,7 @@ function goToWatches() {
     <div>
         {/* populates the Brands + Logo */}
         <h2>{brand.name}</h2>
+
             <button> 
                 <img class="img"
                 src={brand.url}
@@ -20,6 +21,7 @@ function goToWatches() {
                 onClick={goToWatches}
             />
             </button>  
+            
     </div> 
     );
 }
