@@ -35,16 +35,13 @@ export default function App() {
             renders the first one that matches the current URL. */}
         <Routes>
 
-          {/* <Route path="/Brands">
-            <Brands arrBrandsObj={brands}/>
-          </Route> */}
-
+          <Route path="/brands" element = {<Brands brandsArr={brands}/>} />
+          
           {/* <Route path="/brand[:id]">
             <Favorites />
           </Route> */}
 
           <Route path="/" element={<Home />} />
-            
 
         </Routes>
     

@@ -4,35 +4,41 @@ import BrandCard from './BrandCard.js';
 import NewBrand from "./NewBrand";
 
 
-function Brands({arrBrandsObj}) {
+function Brands({ brandsArr }) {
+
+    console.log('brandsArr0', brandsArr[0])
+    // const [brands, setBrands] = useState([]) 
 
 
+    // useEffect(() => {
+    //     setBrands(brandsArr);
+    //   }, [])
+    //   console.log('brands', brands)
 
-
-    return(
+    return (
         <div>
             <h1>"Brands"</h1>
-            
-            
-            //populate the Brands + Logo
+
+
+            {/* //populate the Brands + Logo */}
             <div>
-                {arrBrandsObj.map((brand) => {
-
-                    return( 
-                    
-                    <BrandCard brandObj={brand} />
-
-                    )
-                })}
-
+                <ul>
+                    {brandsArr.map((brand) =>
+                            (
+                                <BrandCard
+                                    key={brand.id}
+                                    brand={brand}
+                                />)
+                    )}
+                </ul>
             </div>
 
-            <NewBrand newBrand={newBrand}/>
-            // Form to add Brand 
+            {/* <NewBrand newBrand={newBrand}/> */}
+            {/* // Form to add Brand 
             //form details: 
                 //Name 
-                //Url for Brand logo 
-                
+                //Url for Brand logo  */}
+
         </div>
 
     );
