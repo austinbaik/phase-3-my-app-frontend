@@ -16,11 +16,11 @@ function Brands({arrBrandsObj}) {
             
             //populate the Brands + Logo
             <div>
-                {brands.map((brand) => {
+                {arrBrandsObj.map((brand) => {
 
                     return( 
                     
-                    <BrandList brandObj={brand} />
+                    <BrandCard brandObj={brand} />
 
                     )
                 })}
