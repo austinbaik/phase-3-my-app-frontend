@@ -1,13 +1,13 @@
 import logo from './logo.svg';
 import './App.css';
 import Home from './Home'
-import Brands from '/Brands.js'
+import Brands from './Brands.js'
 
 import React, { useEffect, useState } from "react";
 
 import {
-  BrowserRouter as Router,
-  Switch,
+  BrowserRouter,
+  Routes,
   Route,
 } from "react-router-dom";
 
@@ -28,22 +28,27 @@ export default function App() {
     }, [])
   
   return (
-    <Router>
-      <div>
+  <div>
+    <BrowserRouter>
+      
         {/* A <Switch> looks through its children <Route>s and
             renders the first one that matches the current URL. */}
-        <Switch>
-          <Route path="/Brands">
+        <Routes>
+
+          {/* <Route path="/Brands">
             <Brands arrBrandsObj={brands}/>
-          </Route>
+          </Route> */}
+
           {/* <Route path="/brand[:id]">
             <Favorites />
           </Route> */}
-          <Route path="/">
-            <Home />
-          </Route>
-        </Switch>
-      </div>
-    </Router>
+
+          <Route path="/" element={<Home />} />
+            
+
+        </Routes>
+    
+    </BrowserRouter> 
+     </div>
   );
 }
