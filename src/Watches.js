@@ -1,13 +1,20 @@
-import React from 'react';
+import React, { useEffect, useState } from "react";
 import './App.css';
+import NewWatch from './NewWatch'
 
 //rendered the individual watch cards for a given brand.id 
 
 function Watches(){
     return(
 
+        <div>
+
+            
         <h1>"Watches"</h1>
 
+        <NewWatch /> 
+
+        </div>
     );
 
 

@@ -60,7 +60,7 @@ function NewBrand({}) {
         </form>
 
     </div>
-        
+
     );
 
 }
