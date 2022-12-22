@@ -14,7 +14,18 @@ import {
 
 export default function App() {
 
+  const [brands, setBrands] = useState([]) 
+  //when new brand is added, make POST api call, then send the new brand up to *THIS* parent component 
+  //add to the 'brands' array setBrands[...brands, newBrand] which updates this component 
 
+
+      // API call to db for list of Brands 
+      // more to App.js
+  useEffect(() => {
+      fetch("http://localhost:9292/brands")
+        .then((r) => r.json())
+        .then((brands) => setBrands(brands));
+    }, [])
   
   return (
     <Router>
@@ -23,7 +34,7 @@ export default function App() {
             renders the first one that matches the current URL. */}
         <Switch>
           <Route path="/Brands">
-            <Brands />
+            <Brands arrBrandsObj={brands}/>
           </Route>
           {/* <Route path="/brand[:id]">
             <Favorites />
