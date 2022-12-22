@@ -3,7 +3,7 @@ import './App.css';
 
 
 
-function BrandList({brand}) {
+function BrandCard({brand}) {
 
 
     return(
@@ -26,4 +26,4 @@ function BrandList({brand}) {
 }
 
 
-export default BrandList; 
+export default BrandCard; 

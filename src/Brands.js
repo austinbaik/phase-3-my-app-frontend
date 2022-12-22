@@ -1,14 +1,18 @@
 import React, { useEffect, useState } from "react";
 import './App.css';
-import 'Brandlist.js';
+import BrandCard from './BrandCard.js';
+import NewBrand from "./NewBrand";
 
 
 function Brands() {
 
     const [brands, setBrands] = useState([]) 
+    //when new brand is added, make POST api call, then send the new brand up to *THIS* parent component 
+    //add to the 'brands' array setBrands[...brands, newBrand] which updates this component 
+
 
         // API call to db for list of Brands 
-
+        // more to App.js
     useEffect(() => {
         fetch("http://localhost:9292/brands")
           .then((r) => r.json())
@@ -34,11 +38,11 @@ function Brands() {
 
             </div>
 
-
+            <NewBrand newBrand={newBrand}/>
             // Form to add Brand 
             //form details: 
                 //Name 
-                //Url to Brand logo 
+                //Url for Brand logo 
                 
         </div>
 
