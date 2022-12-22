@@ -4,7 +4,7 @@ import NewWatch from './NewWatch'
 
 //rendered the individual watch cards for a given brand.id 
 
-function Watches(){
+function Brand(){
     return(
 
         <div>
@@ -21,4 +21,4 @@ function Watches(){
 }
 
 
-export default Watches; 
+export default Brand; 

@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import './App.css';
 import BrandCard from './BrandCard.js';
 import NewBrand from "./NewBrand";
+import Brand from "./Brand"
 
 
 function Brands({ brandsArr }) {

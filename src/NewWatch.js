@@ -4,7 +4,7 @@ import './App.css';
 //component for new Watch submission form 
 
 
-function NewWatch({}) {
+function NewWatch({ }) {
 
 
     const [name, setName] = useState("")
@@ -22,8 +22,8 @@ function NewWatch({}) {
             },
             body: JSON.stringify({
                 name: name,
-                url: imageUrl, 
-                price: price, 
+                url: imageUrl,
+                price: price,
                 model_num: modelNum
             }),
         })
@@ -56,32 +56,32 @@ function NewWatch({}) {
     }
 
 
-    return(
+    return (
 
 
-    <div>
+        <div>
 
-        <h2> Submit New Watch </h2>
+            <h2> Submit New Watch </h2>
 
-        <form onSubmit={handleSubmit}>
+            <form onSubmit={handleSubmit}>
 
-            <label>
-            Name:
-                <input type="text" onChange={handleNameChange} value={name} />
-            </label>
-            Image Url Link:
+                <label>
+                    Name:
+                    <input type="text" onChange={handleNameChange} value={name} />
+                </label>
+                Image Url Link:
                 <input type="text" onChange={handlePriceChange} value={url} />
-            Price:
+                Price:
                 <input type="text" onChange={handleUrlChange} value={price} />
-            Model Number: 
+                Model Number:
                 <input type="text" onChange={handleModelNum} value={modelNum} />
-            
-            <button type="submit">Submit</button>
-            
-        </form>
 
-    </div>
-        
+                <button type="submit">Submit</button>
+
+            </form>
+
+        </div>
+
     );
 
 }
