@@ -4,9 +4,10 @@ import './App.css';
 //component for new Watch submission form 
 
 
-function NewWatch({ }) {
+function NewWatch({ brandId }) {
 
-
+    
+    console.log('brandId: ', brandId);
     const [name, setName] = useState("")
     const [imageUrl, setImageUrl] = useState("")
     const [price, setPrice] = useState("")
@@ -14,8 +15,7 @@ function NewWatch({ }) {
 
     const handleSubmit = (e) => {
         e.preventDefault()
-        fetch(`"http://localhost:9292/brands/${id}"`, {
-
+        fetch(`http://localhost:9292/brands/${brandId}`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -66,13 +66,13 @@ function NewWatch({ }) {
             <form onSubmit={handleSubmit}>
 
                 <label>
-                    Name:
-                    <input type="text" onChange={handleNameChange} value={name} />
+                Name:
+                <input type="text" onChange={handleNameChange} value={name} />
                 </label>
                 Image Url Link:
-                <input type="text" onChange={handlePriceChange} value={imageUrl} />
+                <input type="text" onChange={handlePriceChange} value={price} />
                 Price:
-                <input type="text" onChange={handleUrlChange} value={price} />
+                <input type="text" onChange={handleUrlChange} value={imageUrl} />
                 Model Number:
                 <input type="text" onChange={handleModelNum} value={modelNum} />
 
