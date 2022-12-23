@@ -2,6 +2,7 @@ import logo from './logo.svg';
 import './App.css';
 import Home from './Home'
 import Brands from './Brands.js'
+import Brand from './Brand.js'
 
 import React, { useEffect, useState } from "react";
 
@@ -37,6 +38,9 @@ export default function App() {
 
           <Route path="/brands" element = {<Brands brandsArr={brands}/>} />
           
+          <Route path="/brand/:brandId" element={<Brand brandsArr={brands}/>} />
+
+
           {/* <Route path="/brand[:id]">
             <Favorites />
           </Route> */}

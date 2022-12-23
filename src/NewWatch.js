@@ -14,7 +14,7 @@ function NewWatch({ }) {
 
     const handleSubmit = (e) => {
         e.preventDefault()
-        fetch("http://localhost:9292/brands", {
+        fetch(`"http://localhost:9292/brands/${id}"`, {
 
             method: 'POST',
             headers: {
@@ -46,13 +46,13 @@ function NewWatch({ }) {
         setName(e.target.value)
     }
     function handleUrlChange(e) {
-        setUrl(e.target.value)
+        setImageUrl(e.target.value)
     }
     function handlePriceChange(e) {
-        setUrl(e.target.value)
+        setPrice(e.target.value)
     }
     function handleModelNum(e) {
-        setUrl(e.target.value)
+        setModelNum(e.target.value)
     }
 
 
@@ -70,7 +70,7 @@ function NewWatch({ }) {
                     <input type="text" onChange={handleNameChange} value={name} />
                 </label>
                 Image Url Link:
-                <input type="text" onChange={handlePriceChange} value={url} />
+                <input type="text" onChange={handlePriceChange} value={imageUrl} />
                 Price:
                 <input type="text" onChange={handleUrlChange} value={price} />
                 Model Number:
