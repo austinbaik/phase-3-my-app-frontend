@@ -4,7 +4,7 @@ import './App.css';
 //component for new brand submission form 
 
 
-function NewBrand({}) {
+function NewBrand({setBrands}) {
 
 
     const [name, setName] = useState("")
@@ -25,7 +25,7 @@ function NewBrand({}) {
         })
             .then(response => response.json())
             .then(data => {
-
+                setBrands(brands=>[...brands, data]) //bc setBrands is part of STATE, already has brands included
                 //need to send the return object up to App to update State 
                 console.log('Success:', data);
                 setName("")

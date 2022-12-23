@@ -5,7 +5,7 @@ import NewBrand from "./NewBrand";
 import Brand from "./Brand"
 
 
-function Brands({ brandsArr }) {
+function Brands({ brandsArr, setBrands }) {
 
     console.log('brandsArr0', brandsArr[0])
     // const [brands, setBrands] = useState([]) 
@@ -33,7 +33,7 @@ function Brands({ brandsArr }) {
                 </ul>
             </div>
 
-            <NewBrand/>
+            <NewBrand setBrands={setBrands}/>
             {/* // Form to add Brand 
             //form details: 
                 //Name 

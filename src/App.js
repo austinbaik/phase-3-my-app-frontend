@@ -20,6 +20,8 @@ export default function App() {
   //add to the 'brands' array setBrands[...brands, newBrand] which updates this component 
 
 
+
+
       // API call to db for list of Brands 
       // more to App.js
   useEffect(() => {
@@ -36,7 +38,7 @@ export default function App() {
             renders the first one that matches the current URL. */}
         <Routes>
 
-          <Route path="/brands" element = {<Brands brandsArr={brands}/>} />
+          <Route path="/brands" element = {<Brands brandsArr={brands} setBrands={setBrands}/>} />
           
           <Route path="/brand/:brandId" element={<Brand brandsArr={brands}/>} />
 
