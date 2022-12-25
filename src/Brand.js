@@ -6,13 +6,13 @@ import BrandWatchCard from "./BrandWatchCard";
 
 //rendered the individual watch cards for a given brand.id 
 
-function Brand({ brandsArr }) {
+function Brand({ brandsArr, addNewWatchToStateArr, deleteWatchFromStateArray }) {
 
     const { brandId } = useParams();
-    // console.log("id", brandId)
+    console.log("params id", brandId)
     const [brandWatches, setBrandWatches] = useState([])
 
-    // console.log("brandsArr", brandsArr)
+    console.log("brandsArr", brandsArr)
 
     useEffect(() => {
         // console.log("brandsArr", brandsArr)
@@ -30,7 +30,7 @@ function Brand({ brandsArr }) {
     // set state with the array? 
     //.find on the Id
     // then render the watches 
-    
+
     console.log('brandWatches: ', brandWatches.watches);
     return (
 
@@ -40,21 +40,25 @@ function Brand({ brandsArr }) {
             <h1>{brandWatches.name}</h1>
             ID: {brandWatches.id}
             {/* map through the watches in the brand and render the cards  */}
-            { brandWatches.watches ? 
-            
-            brandWatches.watches.map((watch) => {
-                return (
-                    <div>
-                        
-                        <BrandWatchCard watch={watch} brandId={brandId} />
-                    </div>
-                )
-            })
+            {brandWatches.watches ?
 
-            : 'PENDING!!' }
-            
+                brandWatches.watches.map((watch) => {
+                    return (
+                        <div>
 
-            <NewWatch brandId={brandId} />
+                            <BrandWatchCard
+                                watch={watch}
+                                brandId={brandId}
+                                deleteWatchFromStateArray={deleteWatchFromStateArray}
+                            />
+                        </div>
+                    )
+                })
+
+                : 'PENDING!!'}
+
+
+            <NewWatch brandId={brandId} addNewWatchToStateArr={addNewWatchToStateArr} />
 
         </div >
 

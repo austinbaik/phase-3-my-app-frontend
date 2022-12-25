@@ -4,7 +4,7 @@ import './App.css';
 //component for new Watch submission form 
 
 
-function NewWatch({ brandId }) {
+function NewWatch({ brandId, addNewWatchToStateArr }) {
 
 
     console.log('brandId: ', brandId);
@@ -49,6 +49,7 @@ function NewWatch({ brandId }) {
 
                 //need to send the return object up to App to update State 
                 console.log('Success:', data);
+                addNewWatchToStateArr(data)
                 // setWatchFormData(
                 //     {
                 //         name: "",

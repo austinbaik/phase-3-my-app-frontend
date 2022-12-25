@@ -3,31 +3,34 @@ import { useParams } from 'react-router-dom'
 import './App.css';
 
 
-function BrandWatchCard({ watch, brandId }) {
+function BrandWatchCard({ watch, brandId, deleteWatchFromStateArray}) {
 
     console.log("watch", watch);
     console.log("watchId", watch.id);
 
     const [isEditing, setIsEditing] = useState(false);
 
-
+    let watchId = watch.id 
+    console.log("watchId", watch.id);
 
 
     const handleDeleteClick = () => {
-        fetch(`http://localhost:9292/brands/${brandId}/`, {
+        fetch(`http://localhost:9292/brands/${watchId}`, {
 
             method: "DELETE",
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({
-                id: watch.id,
-            }),
+            // headers: {
+            //     'Content-Type': 'application/json',
+            // },
+            // body: JSON.stringify({
+            //     id: watchId,
+
+            // }),
         })
             .then(response => response.json())
             .then(data => {
-                console.log('Successfly Deleted', data);
-
+                console.log('Successfully Deleted', data);
+                //pass the object up to App.js as a function call, if exists in state, delete from state
+                deleteWatchFromStateArray(data)
             })
 
     }
