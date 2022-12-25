@@ -7,7 +7,7 @@ import Brand from "./Brand"
 
 function Brands({ brandsArr, setBrands }) {
 
-    console.log('brandsArr0', brandsArr[0])
+    console.log('brandsArr0', brandsArr)
     // const [brands, setBrands] = useState([]) 
 
 

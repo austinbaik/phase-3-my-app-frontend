@@ -3,24 +3,53 @@ import { useParams } from 'react-router-dom'
 import './App.css';
 
 
-function BrandWatchCard({watch,brandId }) {
+function BrandWatchCard({ watch, brandId }) {
+
+    console.log("watch", watch);
+    console.log("watchId", watch.id);
+
+    const [isEditing, setIsEditing] = useState(false);
 
 
 
 
-    function handleDeleteClick() {
-        fetch(`http://localhost:9292/brands/${brandId}`, {
+    const handleDeleteClick = () => {
+        fetch(`http://localhost:9292/brands/${brandId}/`, {
+
             method: "DELETE",
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                id: watch.id,
+            }),
+        })
+            .then(response => response.json())
+            .then(data => {
+                console.log('Successfly Deleted', data);
 
-            //build out api 
-        });
+            })
+
     }
-console.log('watch: ', watch);
 
     return (
         <div>
 
-            {/* <EditWatch /> */}
+            {/* Code for EditWatch */}
+
+            {/* {isEditing ? (
+                <EditWatch
+                    id={watch.id}
+                    modelNum={watch.model_num}
+                    price={watch.price}
+                    imageUrl={watch.image_url}
+
+                    onUpdateMessage={handleUpdateMessage}
+                />
+            ) : (
+                <p>{body}</p>
+            )} */}
+
 
             {watch.name}
             <br></br>
@@ -29,20 +58,31 @@ console.log('watch: ', watch);
             {watch.price}
             <br></br>
             <img class="img"
-                        src={watch.image_url}
-                        alt={watch.image_url}
-                    />
+                src={watch.image_url}
+                alt={watch.image_url}
+            />
+
+
+
+            {/* add the Edit button */}
+
+            <button onClick={() => setIsEditing((isEditing) => !isEditing)}>
+                <span role="img" aria-label="edit">
+                    ✏️
+                </span>
+            </button>
 
             <button onClick={handleDeleteClick}>
                 <span role="img" aria-label="delete">
                     🗑
                 </span>
             </button>
+
         </div>
 
     )
 
-}
 
+}
 
 export default BrandWatchCard;

@@ -6,9 +6,6 @@ import BrandWatchCard from "./BrandWatchCard";
 
 //rendered the individual watch cards for a given brand.id 
 
-
-
-
 function Brand({ brandsArr }) {
 
     const { brandId } = useParams();
@@ -33,13 +30,15 @@ function Brand({ brandsArr }) {
     // set state with the array? 
     //.find on the Id
     // then render the watches 
-
+    
+    console.log('brandWatches: ', brandWatches.watches);
     return (
 
         <div>
 
 
             <h1>{brandWatches.name}</h1>
+            ID: {brandWatches.id}
             {/* map through the watches in the brand and render the cards  */}
             { brandWatches.watches ? 
             
@@ -56,16 +55,8 @@ function Brand({ brandsArr }) {
             
 
             <NewWatch brandId={brandId} />
-            {/* need to pass down brand_id */}
 
         </div >
-
-
-
-
-
-
-
 
     )
 }
