@@ -94,9 +94,9 @@ borderWidth: 250px;
 .nav {
   font: 'Helvetica Neue';
   text-align: left;
-  font-size: calc(10px + 2vmin);
-  color: white;
-  background-color: #e4002b;
+  font-size: calc(12px + 2vmin);
+  color: black;
+  background-color: #006994;
 }
 
 
@@ -120,7 +120,7 @@ borderWidth: 250px;
 .center-box {
   margin: auto;
   width: 50%;
-  border: 1px solid blue;
+  border: 1px solid #006994;
   padding: 10px;
 }
 

@@ -48,7 +48,7 @@ function BrandWatchCard({
             <br></br>
             Model #: {watch.model_num}
             <br></br>
-            Price: {watch.price}
+            Price: ${watch.price}
             <br></br>
             <img class="center-img" 
                 src={watch.image_url}
