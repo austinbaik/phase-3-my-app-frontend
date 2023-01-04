@@ -7,7 +7,7 @@ import './App.css';
 function NewWatch({ brandId, addNewWatchToStateArr }) {
 
 
-    console.log('brandId: ', brandId);
+    // console.log('brandId: ', brandId);
     const [name, setName] = useState("")
     const [image_url, setImageUrl] = useState("")
     const [price, setPrice] = useState("")
@@ -48,8 +48,12 @@ function NewWatch({ brandId, addNewWatchToStateArr }) {
             .then(data => {
 
                 //need to send the return object up to App to update State 
-                console.log('Success:', data);
+                // console.log('Success:', data);
                 addNewWatchToStateArr(data)
+                setName("")
+                setImageUrl("")
+                setPrice("")
+                setModelNum("")
                 // setWatchFormData(
                 //     {
                 //         name: "",
@@ -82,22 +86,41 @@ function NewWatch({ brandId, addNewWatchToStateArr }) {
 
     return (
 
-        <div>
+        <div class="center-box" >
 
-            <h2> Submit New Watch </h2>
+            <h2 class="center-text"> Submit New Watch </h2>
+            
+            <br></br>
 
-            <form onSubmit={handleSubmit}>
+            <form  onSubmit={handleSubmit} class="center-text">
 
-                <label>
-                    Name:
-                    <input type="text" name='name' onChange={handleNameChange} value={name} />
-                </label>
+                Name:
+                <br></br>
+                <input type="text" name='name' onChange={handleNameChange} value={name} />
+
+                <br></br>
+
                 Price:
+                <br></br>
+
                 <input type="text" name='price' onChange={handlePriceChange} value={price} />
-                Image Url Link:
+                <br></br>
+
+                Image Url Link: 
+                <br></br>
+
                 <input type="text" name='imageUrl' onChange={handleUrlChange} value={image_url} />
+
+                <br></br>
+
                 Model Number:
+                <br></br>
+
                 <input type="text" name='model_num' onChange={handleModelNum} value={modelNum} />
+
+                <br></br>
+                <br></br>
+
 
                 <button type="submit">Submit</button>
 

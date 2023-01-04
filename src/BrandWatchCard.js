@@ -4,15 +4,20 @@ import './App.css';
 import EditWatch from "./EditWatch";
 
 
-function BrandWatchCard({ watch, brandId, deleteWatchFromStateArray}) {
+function BrandWatchCard({ 
+    watch, 
+    brandId, 
+    deleteWatchFromStateArray,
+    updateWatchToStateArr
+ }) {
 
-    console.log("watch", watch);
-    console.log("watchId", watch.id);
+    // console.log("watch", watch);
+    // console.log("watchId", watch.id);
 
     const [isEditing, setIsEditing] = useState(false);
 
-    let watchId = watch.id 
-    console.log("watchId", watch.id);
+    let watchId = watch.id
+    // console.log("watchId", watch.id);
 
 
     const handleDeleteClick = () => {
@@ -37,38 +42,32 @@ function BrandWatchCard({ watch, brandId, deleteWatchFromStateArray}) {
     }
 
     return (
-        <div>
+        <div class="center-box">
 
-            {/* Code for EditWatch */}
-
-            {/* {isEditing ? (
-                <EditWatch
-                    id={watch.id}
-                    modelNum={watch.model_num}
-                    price={watch.price}
-                    imageUrl={watch.image_url}
-
-                    onUpdateMessage={handleUpdateMessage}
-                />
-            ) : (
-                <p>{body}</p>
-            )} */}
-
-
-            {watch.name}
+            Name: {watch.name}
             <br></br>
-            {watch.model_num}
+            Model #: {watch.model_num}
             <br></br>
-            {watch.price}
+            Price: {watch.price}
             <br></br>
-            <img class="img"
+            <img class="center-img" 
                 src={watch.image_url}
                 alt={watch.image_url}
             />
 
+            {isEditing ? (
+                <EditWatch
+                    name={watch.name}
+                    id={watch.id}
+                    modelNum={watch.model_num}
+                    price={watch.price}
+                    imageUrl={watch.image_url}
+                    updateWatchToStateArr={updateWatchToStateArr}
+                    setIsEditing={setIsEditing}
+                />
+            ) : (null
 
-
-            {/* add the Edit button */}
+            )}
 
             <button onClick={() => setIsEditing((isEditing) => !isEditing)}>
                 <span role="img" aria-label="edit">

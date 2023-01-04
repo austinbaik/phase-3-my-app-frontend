@@ -45,21 +45,23 @@ function NewBrand({setBrands}) {
 
 
     return(
-    <div>
+        <div class="center-box">
 
-        <h2> Submit New Brand </h2>
+            <h2 class="center"> Submit New Brand </h2>
 
-        <form onSubmit={handleSubmit}>
-            <label>
-            Name:
+            <form onSubmit={handleSubmit} class="center">
+                <label>
+                Name: 
                 <input type="text" onChange={handleNameChange} value={name} />
-            </label>
-            Logo Link:
-            <input type="text" onChange={handleUrlChange} value={url} />
-            <button type="submit">Submit</button>
-        </form>
+                </label>
+                <br></br>
+                Logo Link: 
+                <input type="text" onChange={handleUrlChange} value={url} />
+                <br></br>
+                <button type="submit">Submit</button>
+            </form>
 
-    </div>
+        </div>
 
     );
 

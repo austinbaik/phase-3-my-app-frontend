@@ -7,7 +7,7 @@ import Brand from "./Brand"
 
 function Brands({ brandsArr, setBrands }) {
 
-    console.log('brandsArr0', brandsArr)
+    // console.log('brandsArr0', brandsArr)
     // const [brands, setBrands] = useState([]) 
 
 
@@ -17,15 +17,14 @@ function Brands({ brandsArr, setBrands }) {
     //   console.log('brands', brands)
 
     return (
-        <div>
-            <h1>Brands</h1>
+        <div >
 
             {/* //populate the Brands + Logo */}
             <div>
-                <ul>
+                <ul >
                     {brandsArr.map((brand) =>
                             (
-                                <BrandCard
+                                <BrandCard 
                                     key={brand.id}
                                     brand={brand}
                                 />)
@@ -33,7 +32,7 @@ function Brands({ brandsArr, setBrands }) {
                 </ul>
             </div>
 
-            <NewBrand setBrands={setBrands}/>
+            <NewBrand setBrands={setBrands} />
             {/* // Form to add Brand 
             //form details: 
                 //Name 

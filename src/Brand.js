@@ -6,13 +6,18 @@ import BrandWatchCard from "./BrandWatchCard";
 
 //rendered the individual watch cards for a given brand.id 
 
-function Brand({ brandsArr, addNewWatchToStateArr, deleteWatchFromStateArray }) {
+function Brand({ 
+    brandsArr, 
+    addNewWatchToStateArr, 
+    deleteWatchFromStateArray,
+    updateWatchToStateArr
+ }) {
 
     const { brandId } = useParams();
-    console.log("params id", brandId)
+    // console.log("params id", brandId)
     const [brandWatches, setBrandWatches] = useState([])
 
-    console.log("brandsArr", brandsArr)
+    // console.log("brandsArr", brandsArr)
 
     useEffect(() => {
         // console.log("brandsArr", brandsArr)
@@ -31,26 +36,32 @@ function Brand({ brandsArr, addNewWatchToStateArr, deleteWatchFromStateArray }) 
     //.find on the Id
     // then render the watches 
 
-    console.log('brandWatches: ', brandWatches.watches);
+    // console.log('brandWatches: ', brandWatches.watches);
     return (
 
         <div>
 
-
-            <h1>{brandWatches.name}</h1>
-            ID: {brandWatches.id}
+            <br></br>
+            <h1 class="center-text" >{brandWatches.name}</h1>
+            <br></br>
+            {/* ID: {brandWatches.id} */}
             {/* map through the watches in the brand and render the cards  */}
             {brandWatches.watches ?
 
                 brandWatches.watches.map((watch) => {
                     return (
-                        <div>
+                        <div >
 
-                            <BrandWatchCard
+                            <BrandWatchCard 
+                                key={watch.id}
                                 watch={watch}
                                 brandId={brandId}
                                 deleteWatchFromStateArray={deleteWatchFromStateArray}
+                                updateWatchToStateArr={updateWatchToStateArr}
                             />
+                            <br></br>
+                            <br></br>
+                            <br></br>
                         </div>
                     )
                 })

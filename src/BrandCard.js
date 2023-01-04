@@ -10,9 +10,10 @@ function BrandCard({ brand }) {
 
 
     return (
-        <div>
+        <div > 
+            
             {/* populates the Brands + Logo */}
-            <h2>{brand.name}</h2>
+            <h2 class="center">{brand.name}</h2>
             {/* brand.id */}
 
             {/* use react-router-dom Link component  
@@ -20,7 +21,7 @@ function BrandCard({ brand }) {
 
             <Link to={`/brand/${brand.id}`} brand={brand}>
 
-                <button>
+                <button class="center-img"> 
                     <img class="img"
                         src={brand.url}
                         alt={brand.url}
