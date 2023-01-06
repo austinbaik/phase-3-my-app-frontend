@@ -19,7 +19,7 @@ function BrandCard({ brand }) {
             {/* use react-router-dom Link component  
         should be a link */}
 
-            <Link to={`/brand/${brand.id}`} brand={brand}>
+            <Link to={`/brands/${brand.id}`} brand={brand}>
 
                 <button class="center-img"> 
                     <img class="img"

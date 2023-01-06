@@ -66,7 +66,7 @@ function Brand({
                     )
                 })
 
-                : 'PENDING!!'}
+                : 'Add a Watch!'}
 
 
             <NewWatch brandId={brandId} addNewWatchToStateArr={addNewWatchToStateArr} />

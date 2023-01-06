@@ -144,7 +144,7 @@ export default function App() {
               setBrands={setBrands} 
             />} />
 
-          <Route path="/brand/:brandId" element={
+          <Route path="/brands/:brandId" element={
             <Brand
               brandsArr={brands}
               addNewWatchToStateArr={addNewWatchToStateArr}

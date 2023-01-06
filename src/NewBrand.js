@@ -25,6 +25,7 @@ function NewBrand({setBrands}) {
         })
             .then(response => response.json())
             .then(data => {
+                // const newBrand = {...data, watches: []}
                 setBrands(brands=>[...brands, data]) //bc setBrands is part of STATE, already has brands included
                 //need to send the return object up to App to update State 
                 console.log('Success:', data);
